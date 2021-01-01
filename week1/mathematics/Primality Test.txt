@@ -1,0 +1,18 @@
+Question:	
+        A prime number is a number which is 
+only divisible by 1 and itself.Given number 
+N check if it is prime or not.
+
+Solution:
+
+import math
+def isPrime(N):
+    if (N <= 1):
+        return False
+ 
+    # Check from 2 to n-1
+    for i in range(2,int(math.sqrt(N))+1):
+        if (N % i == 0):
+            return False
+ 
+    return True

@@ -1,0 +1,18 @@
+Question:
+	Given a quadratic equation in the 
+form ax2 + bx + c.Find its roots.
+
+Solution:
+
+import math
+def quadraticRoots(self, a, b, c):
+	    d = b * b - 4 * a * c
+        sqrt_val = math.sqrt(abs(d))
+	    
+        if d>0:
+            return  [max(math.floor((-b - sqrt_val)/(2 * a)),math.floor((-b + sqrt_val)/(2 * a))),
+                    min(math.floor((-b - sqrt_val)/(2 * a)),math.floor((-b + sqrt_val)/(2 * a)))]
+        elif d == 0:
+            return [math.floor((-b)/(2*a)),math.floor((-b)/(2*a))]
+        else:
+            return ['Imaginary']

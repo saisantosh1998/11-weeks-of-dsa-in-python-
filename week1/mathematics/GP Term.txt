@@ -1,0 +1,9 @@
+Question:	
+        Given the first 2 terms A and B of a 
+   Geometric Series. The task is to find the 
+   Nth term of the series.
+
+Solution:
+
+def termOfGP(A,B,N):
+    return A*((B/A)**(N-1))

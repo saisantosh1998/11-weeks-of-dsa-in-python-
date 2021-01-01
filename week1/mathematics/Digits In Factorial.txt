@@ -1,0 +1,20 @@
+Question:
+	Given an integer N. Find the number of digits 
+that appear in its factorial. Factorial is defined as, 
+factorial(n) = 1*2*3*4……..*N and factorial(0) = 1.
+
+Solution:
+
+def digitsInFactorial(N):
+    if (N < 0): 
+        return 0; 
+    if (N <= 1): 
+        return 1; 
+  
+    
+    
+    digits = 0; 
+    for i in range(2, N + 1): 
+        digits += math.log10(i); 
+  
+    return math.floor(digits) + 1; 

@@ -1,0 +1,10 @@
+Question:
+	You are given an interger I, 
+find the absolute value of the interger I.
+
+Solution:
+def absolute(I):
+    if I<0:
+        return -(I)
+    else :
+        return I	
