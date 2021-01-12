@@ -1,0 +1,16 @@
+Question:
+	 Given an array arr[] of size N, 
+find the smallest positive number missing from the array.
+Solution:
+
+def findMissing(arr, size):
+    if 1 not in arr:
+        return 1
+    minmiss=float("inf")
+    for i in range(n):
+       if arr[i]>0 and arr[i]+1 not in arr:
+           if arr[i]+1<minmiss:
+               minmiss=arr[i]+1
+    return minmiss
+
+    	

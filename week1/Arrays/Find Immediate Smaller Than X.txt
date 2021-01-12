@@ -1,0 +1,14 @@
+Question:
+	 Given an array arr[] of size N containing 
+positive integers and an integer X, find the element 
+in the array which is smaller than X and closest to it.
+
+
+
+Solution:
+def immediateSmaller(arr,n,x):
+        smaller=-1
+        for i in arr:
+            if i<x and i>smaller:
+                smaller=i
+        return smaller

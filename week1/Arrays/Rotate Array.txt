@@ -1,0 +1,28 @@
+Question:
+	Given an unsorted array arr[] of size N, 
+rotate it by D elements in the counter-clockwise 
+direction. 
+
+ 
+Solution:
+
+def computeGCD(x, y):
+        while(y):
+            x, y = y, x % y 
+        return x
+def rotateArr(A,D,N):
+    
+    gcd=computeGCD(N,D)
+    for i in range(gcd):
+        temp=A[i]
+        j=i
+        while 1:
+            k=j+D
+            if k>=N:
+                k=k-N
+            if k==i:
+                break
+            A[j]=A[k]
+            j=k
+        A[j]=temp
+    return A	

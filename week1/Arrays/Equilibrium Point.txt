@@ -1,0 +1,20 @@
+Question:
+	Given an array A of N positive numbers. 
+The task is to find the first Equilibium Point 
+in the array. Equilibrium Point in an array is 
+a position such that the sum of elements before 
+it is equal to the sum of elements after it.
+
+Solution:
+def equilibriumPoint(A, N):
+   
+    if N==1:
+        return 1
+    leftsum=0
+    s=sum(A)
+    for i in range(N):
+        s-=A[i]
+        if s==leftsum:
+            return i+1
+        leftsum+=A[i]
+    return -1

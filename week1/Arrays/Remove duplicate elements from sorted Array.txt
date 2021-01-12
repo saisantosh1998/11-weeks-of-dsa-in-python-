@@ -1,0 +1,18 @@
+Question:
+	Given a sorted array A of size N, 
+delete all the duplicates elements from A..
+
+Solution:
+
+def remove_duplicate(self, A, N):
+	    if N == 0 or N == 1: 
+            return N 
+        j = 0
+        for i in range(0, N-1): 
+            if A[i] != A[i+1]: 
+                A[j] = A[i] 
+                j += 1
+   
+        A[j] = A[N-1] 
+        j += 1
+        return j 	

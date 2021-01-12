@@ -1,0 +1,29 @@
+Question:
+	 Given a sorted array containing only 
+0s and 1s, find the transition point. 
+
+
+Solution:
+def transitionPoint(arr, n):
+    l = 0
+    h = n-1
+    
+    while(l <= h):
+    
+        mid = l + (h-l)//2;
+        
+        if(arr[mid] == 1 and (mid-1 < 0 or arr[mid-1] == 0)):
+        
+            return mid;
+        
+        elif(arr[mid] == 1):
+        
+            h = mid-1;
+        
+        else:
+        
+            l = mid+1;
+        
+
+    
+    return -1

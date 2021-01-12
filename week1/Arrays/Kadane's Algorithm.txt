@@ -1,0 +1,14 @@
+Question:
+	 Given an array arr of N integers. 
+Find the contiguous sub-array with maximum sum.
+Solution:
+def maxSubArraySum(a,size):
+    prevsum=-float("inf")
+    currsum=0
+    for i in range(size):
+        currsum+=a[i]
+        if currsum>prevsum:
+            prevsum=currsum
+        if currsum<0:
+            currsum=0
+    return prevsum
