@@ -1,0 +1,21 @@
+Question:
+	Given two sorted arrays of sizes N and M 
+respectively. The task is to find the median of 
+the two arrays when they get merged.
+
+Solution:
+
+def findMedianSortedArrays(arr1, n1, arr2, n2):
+   
+   
+    arr=[] 
+    for i in range(n1):
+        arr.append(arr1[i])
+    for i in range(n2):
+        arr.append(arr2[i])
+    arr.sort()
+    if((n1+n2) % 2 == 0 ):
+        return int((arr[int((n1+n2)/2)] + arr[int((n1+n2)/2) - 1]) / 2);
+    else:
+        return arr[int((n1+n2)/2)] ;
+	

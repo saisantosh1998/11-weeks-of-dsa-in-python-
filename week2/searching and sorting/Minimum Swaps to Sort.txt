@@ -1,0 +1,21 @@
+Question:
+	GGiven an array of n distinct elements. 
+Find the minimum number of swaps required to 
+sort the array in strictly increasing order.
+
+Solution:
+def minSwaps(arr, N):
+    h={}
+    for i in range(N):
+        h[arr[i]]=i
+    temp=arr.copy()
+    temp.sort()
+    swap=0
+    for i in range(N):
+        if(arr[i]!=temp[i]):
+            swap+=1
+            temp1=arr[i]
+            arr[i],arr[h[temp[i]]]=arr[h[temp[i]]],arr[i]
+            h[temp1]=h[temp[i]]
+            h[temp[i]]=i
+    return swap 	

@@ -1,0 +1,20 @@
+Question:
+	The intersection of two arrays 
+contains the elements common to both the 
+arrays. The intersection should not count
+ duplicate elements.
+Solution:
+
+def printIntersection(a, b, n, m):
+   
+   
+    l=[]
+    s=set()
+    for i in range(n):
+        s.add(a[i])
+    for j in range(m):
+        if b[j] in s and b[j]!=b[j-1]:
+            l.append(b[j])
+    if len(l)==0:
+        return -1
+    return l

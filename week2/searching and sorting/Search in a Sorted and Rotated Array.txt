@@ -1,0 +1,21 @@
+Question:
+	Given a sorted and rotated array A of N 
+distinct elements which is rotated at some point, 
+and given an element K. The task is to find the 
+index of the given element K in the array A.
+Solution:
+def SearchUtil(arr,l,h,k):
+    if l > h: 
+        return -1
+    mid=(l+h)//2
+    if arr[mid]==k:
+        return mid
+    if arr[l]<=arr[mid]:
+        if k<=arr[mid] and k>=arr[l]:
+            return SearchUtil(arr,l,mid-1,k)
+        return SearchUtil(arr,mid+1,h,k)
+    if k >= arr[mid] and k <= arr[h]: 
+        return SearchUtil(arr, mid + 1, h, k) 
+    return SearchUtil(arr, l, mid-1, k)
+def Search(arr,n,k):
+    return SearchUtil(arr,0,n-1,k)	
